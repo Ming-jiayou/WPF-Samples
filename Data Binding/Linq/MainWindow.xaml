@@ -25,19 +25,18 @@
                     <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=TaskName}" />
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="Description:"/>
                     <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Description}"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Priority:"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Priority}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="TaskType:"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=TaskType}"/>
                 </Grid>
             </Border>
         </DataTemplate>
     </Window.Resources>
     <StackPanel>
-        <TextBlock Margin="10,0,0,0">Choose a Priority:</TextBlock>
+        <TextBlock Margin="10,0,0,0">Choose TaskType:</TextBlock>
         <ListBox SelectionChanged="ListBox_SelectionChanged"
                  SelectedIndex="0" Margin="10,0,10,0" >
-            <ListBoxItem>1</ListBoxItem>
-            <ListBoxItem>2</ListBoxItem>
-            <ListBoxItem>3</ListBoxItem>
+            <ListBoxItem>Home</ListBoxItem>
+            <ListBoxItem>Work</ListBoxItem>
         </ListBox>
         <ListBox Width="400" Margin="10" Name="myListBox"
                  HorizontalContentAlignment="Stretch"

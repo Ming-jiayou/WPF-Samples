@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleBinding"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525"
+       >
 
     <Window.Resources>
         <local:Person x:Key="MyDataSource" PersonName="Joe"/>
@@ -25,18 +26,20 @@
             <Setter Property="Padding" Value="3"/>
         </Style>
     </Window.Resources>
-    <Border Margin="5" BorderBrush="Aqua" BorderThickness="1" Padding="8" CornerRadius="3">
-        <DockPanel Width="200" Height="100" Margin="35">
-            <Label>Enter a Name:</Label>
-            <TextBox>
-                <TextBox.Text>
-                    <Binding Source="{StaticResource MyDataSource}" Path="PersonName"
-                   UpdateSourceTrigger="PropertyChanged"/>
-                </TextBox.Text>
-            </TextBox>
+    <Grid>
+        <Border Margin="5" BorderBrush="Aqua" BorderThickness="1" Padding="8" CornerRadius="3">
+            <DockPanel Grid.Row ="0" LastChildFill="False" Width="200" Height="100" Margin="35">
+                <Label>Enter a Name:</Label>
+                <TextBox>
+                    <TextBox.Text>
+                        <Binding Source="{StaticResource MyDataSource}" Path="PersonName"
+               UpdateSourceTrigger="PropertyChanged"/>
+                    </TextBox.Text>
+                </TextBox>
+                <Label>The name you entered:</Label>
+                <TextBlock Text="{Binding Source={StaticResource MyDataSource}, Path=PersonName}"/>
+            </DockPanel>
+        </Border>
+    </Grid>
 
-            <Label>The name you entered:</Label>
-            <TextBlock Text="{Binding Source={StaticResource MyDataSource}, Path=PersonName}"/>
-        </DockPanel>
-    </Border>
 </Window>

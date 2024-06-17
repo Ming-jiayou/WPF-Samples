@@ -27,5 +27,10 @@ namespace InsertTextW32Target
         {
             tbTarget.Enabled = (checkBox3.CheckState != CheckState.Checked);
         }
+
+        private void Target_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

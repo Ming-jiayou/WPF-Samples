@@ -42,7 +42,7 @@ namespace UnhandledExceptionHandling
                 }
 
                 // Add entry to event log
-                EventLog.WriteEntry("app", "Unrecoverable Exception: " + e.Exception.Message, EventLogEntryType.Error);
+                //EventLog.WriteEntry("app", "Unrecoverable Exception: " + e.Exception.Message, EventLogEntryType.Error);
 
                 // Return exit code
                 Shutdown(-1);

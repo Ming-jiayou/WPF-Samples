@@ -21,11 +21,21 @@ namespace Linq
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var pri = int.Parse(((sender as ListBox).SelectedItem as ListBoxItem).Content.ToString());
-
-            DataContext = from task in tasks
-                where task.Priority == pri
-                select task;
+            var pri = ((sender as ListBox).SelectedItem as ListBoxItem).Content.ToString();
+            TaskType type = new TaskType();
+            switch (pri)
+            {
+                case "Home":
+                    type = TaskType.Home;
+                    break;
+                case "Work":
+                    type = TaskType.Work;
+                    break;
+                default:
+                    break;
+            }
+            
+            DataContext = tasks.Where(x => x.TaskType == type);
         }
     }
 }

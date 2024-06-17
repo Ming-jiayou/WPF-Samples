@@ -14,6 +14,10 @@
                 <DataTrigger Binding="{Binding Path=State}" Value="WA">
                     <Setter Property="Foreground" Value="Red" />
                 </DataTrigger>
+                <DataTrigger Binding="{Binding Path=Name}" Value="Redmond">
+                    <Setter Property="Foreground" Value= "Coral" />
+                    <Setter Property="Background" Value= "DarkViolet" />
+                </DataTrigger>
                 <MultiDataTrigger>
                     <MultiDataTrigger.Conditions>
                         <Condition Binding="{Binding Path=Name}" Value="Portland" />
