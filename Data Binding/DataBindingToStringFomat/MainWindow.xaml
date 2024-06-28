@@ -8,17 +8,14 @@
         Title="MainWindow" SizeToContent="WidthAndHeight">
     <StackPanel>
         <StackPanel.Resources>
-
             <local:ItemsForSale x:Key="MyData"/>
         </StackPanel.Resources>
-
         <TextBlock Margin="5,10,0,0" FontSize="20">Formatting a string on a Binding</TextBlock>
         <TextBlock Margin="5" FontSize="14" TextWrapping="Wrap">
             This ListView contains a list of items for sale. 
             The second column of the ListView displays a string that 
             includes the price of the object. The price is formatted as a currency.
         </TextBlock>
-
         <ListView ItemsSource="{StaticResource MyData}">
             <ListView.View>
                 <GridView>

@@ -11,15 +11,18 @@
             <Setter Property="Control.Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <Rectangle Margin="-2" StrokeThickness="1" Stroke="Red" StrokeDashArray="1 2"/>
+                        <Rectangle Stroke="Blue"
+                                               StrokeThickness="2"
+                                               StrokeDashArray="2 2"
+                                               Margin="-2"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </Window.Resources>
-    <StackPanel Background="Ivory" Orientation="Horizontal">
+    <StackPanel  Orientation="Horizontal">
         <Canvas Width="10"/>
-        <Button Width="100" Height="30" FocusVisualStyle="{DynamicResource MyFocusVisual}">
+        <Button Width="100" Height="30" FocusVisualStyle="{StaticResource MyFocusVisual}">
             Focus Here</Button>
         <Canvas Width="100"/>
         <Button Width="100" Height="30" FocusVisualStyle="{DynamicResource MyFocusVisual}">

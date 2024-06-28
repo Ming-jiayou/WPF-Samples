@@ -33,7 +33,7 @@
                 <TextBox>
                     <TextBox.Text>
                         <Binding Source="{StaticResource MyDataSource}" Path="PersonName"
-               UpdateSourceTrigger="PropertyChanged"/>
+                                 UpdateSourceTrigger="PropertyChanged"/>
                     </TextBox.Text>
                 </TextBox>
                 <Label>The name you entered:</Label>

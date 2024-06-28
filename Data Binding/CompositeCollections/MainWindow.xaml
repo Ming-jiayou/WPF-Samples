@@ -37,9 +37,9 @@
             <ListBox.ItemsSource>
                 <CompositeCollection>
                     <CollectionContainer
-            Collection="{Binding Source={StaticResource GreekGodsData}}" />
+                              Collection="{Binding Source={StaticResource GreekGodsData}}" />
                     <CollectionContainer
-            Collection="{Binding Source={StaticResource GreekHeroesData}}" />
+                              Collection="{Binding Source={StaticResource GreekHeroesData}}" />
                     <ListBoxItem Foreground="Red">Other Listbox Item 1</ListBoxItem>
                     <ListBoxItem Foreground="Red">Other Listbox Item 2</ListBoxItem>
                 </CompositeCollection>

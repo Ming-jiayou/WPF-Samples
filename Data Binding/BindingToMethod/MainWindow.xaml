@@ -9,7 +9,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
         <ObjectDataProvider ObjectType="{x:Type local:TemperatureScale}"
-                        MethodName="ConvertTemp" x:Key="ConvertTemp">
+                            MethodName="ConvertTemp" x:Key="ConvertTemp">
             <ObjectDataProvider.MethodParameters>
                 <system:Double>0</system:Double>
                 <local:TempType>Celsius</local:TempType>

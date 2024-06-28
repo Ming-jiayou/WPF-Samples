@@ -43,10 +43,10 @@
         <TextBlock FontFamily="Verdana" FontSize="11"
                Margin="5,15,0,10" FontWeight="Bold">My Friends:</TextBlock>
         <ListBox Width="200" IsSynchronizedWithCurrentItem="True"
-             ItemsSource="{Binding Source={StaticResource MyFriends}}"/>
+                 ItemsSource="{Binding Source={StaticResource MyFriends}}"/>
         <TextBlock FontFamily="Verdana" FontSize="11"
-               Margin="5,15,0,5" FontWeight="Bold">Information:</TextBlock>
+                   Margin="5,15,0,5" FontWeight="Bold">Information:</TextBlock>
         <ContentControl Content="{Binding Source={StaticResource MyFriends}}"
-                    ContentTemplate="{StaticResource DetailTemplate}"/>
+                        ContentTemplate="{StaticResource DetailTemplate}"/>
     </StackPanel>
 </Window>
