@@ -104,13 +104,25 @@
                 Background="Transparent"
                 BorderBrush="Transparent"
                 Command="{Binding ViewModel.BackCommand}"
+                IsEnabled="{Binding ViewModel.CanNavigateback}"
                 WindowChrome.IsHitTestVisibleInChrome="True"
                 ToolTipService.ToolTip="Back">
                 <TextBlock
                     VerticalAlignment="Center"
                     FontFamily="Segoe Fluent Icons"
                     FontSize="12"
-                    Text="&#xE72B;" />
+                    Text="&#xE72B;">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Foreground" Value="{DynamicResource TextFillColorDisabledBrush}">
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Button>
 
             <StackPanel
@@ -132,7 +144,7 @@
             <Button
                 x:Name="MinimizeButton"
                 Grid.Column="2"
-                VerticalAlignment="Center"
+                VerticalAlignment="Top"
                 Background="Transparent"
                 BorderBrush="Transparent"
                 Click="MinimizeWindow"
@@ -148,7 +160,7 @@
             <Button
                 x:Name="MaximizeButton"
                 Grid.Column="3"
-                VerticalAlignment="Center"
+                VerticalAlignment="Top"
                 Background="Transparent"
                 BorderBrush="Transparent"
                 Click="MaximizeWindow"
@@ -165,7 +177,7 @@
             <Button
                 x:Name="CloseButton"
                 Grid.Column="4"
-                VerticalAlignment="Center"
+                VerticalAlignment="Top"
                 Background="Transparent"
                 BorderBrush="Transparent"
                 Click="CloseWindow"
@@ -174,7 +186,7 @@
                 <TextBlock
                     VerticalAlignment="Center"
                     FontFamily="Segoe Fluent Icons"
-                    FontSize="14"
+                    FontSize="16"
                     Text="&#xE711;" />
             </Button>
         </Grid>
@@ -206,7 +218,8 @@
                     Margin="8,24,0,0"
                     AutomationProperties.Name="Navigation Pane"
                     ItemsSource="{Binding ViewModel.Controls}"
-                    SelectedItemChanged="ControlsList_SelectedItemChanged">
+                    PreviewKeyDown="ControlsList_PreviewKeyDown"
+                    PreviewMouseLeftButtonUp="ControlsList_PreviewMouseLeftButtonUp">
                     <TreeView.ItemTemplate>
                         <HierarchicalDataTemplate ItemsSource="{Binding Children}">
                             <Grid MinHeight="30">
@@ -257,7 +270,7 @@
                 BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
                 BorderThickness="1"
                 CornerRadius="8,0,0,0">
-                <Frame x:Name="RootContentFrame" />
+                <Frame x:Name="RootContentFrame" Navigated="RootContentFrame_Navigated"/>
             </Border>
         </Grid>
     </Grid>
